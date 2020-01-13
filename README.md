@@ -44,6 +44,6 @@ The concept in the 2nd notebook explains the motion of the robot in 1D and gives
 
 ## Results
 
-<img src='images/result.jpg'> # width="80%" height="80%">
+<img src='images/result.jpg' width="80%" height="80%">
 
 As you can see the red circle is the robot and the purple cross marks are the landmarks. The co-orindates of the last pose of the robot are mentioned after N time steps. We can compare this value with the output robot position value of the `data` and can see the they are not exactly they same. The error is due to the noise that I have introduced in the robot motion and the sensor.
