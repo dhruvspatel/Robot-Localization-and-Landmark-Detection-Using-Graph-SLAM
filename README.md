@@ -8,30 +8,38 @@ In this project, I have implemented Graph SLAM in a 2D grid world where the robo
 
 ## Project Walkthrough
 
-### 1. Define robot variables and create data
+### 1. Define robot variables and create data:
 
 First we define variables with respect to the world and the robot. The variables that I have used are the following:
-'''
-- 'N': time steps for which we want our robot to have a random walk
-- 'num_landmarks': number of landmarks in the world
-- 'world_size': the grid size of the world (Here I have taken it as 100 units (10x10))
-- 'measurement_range': the range in which the robot measures a landmark
-- 'motion_noise': noise or uncertanity present in the robot motion.
-- 'measurement_noise': noise or uncertanity present in the robot's distance measurement sensor. These two moise variables are introduced to mimick real-life sceanrios.
-- 'distance': distance by which a robot can move during a particular time step.
-'''
+
+- '--N': time steps for which we want our robot to have a random walk
+- '--num_landmarks': number of landmarks in the world
+- '--world_size': the grid size of the world (Here I have taken it as 100 units (10x10))
+- '--measurement_range': the range in which the robot measures a landmark
+- '--motion_noise': noise or uncertanity present in the robot motion.
+- '--measurement_noise': noise or uncertanity present in the robot's distance measurement sensor. These two moise variables are introduced to mimick real-life sceanrios.
+- '--distance': distance by which a robot can move during a particular time step.
+
 
 All of the above variables go into the 'make_data' function and out comes the true landmark locations and the robots final pose co-ordinates.
 
-Let's say data = make_data(*all of the above variables*), then data[time_step][0] = Measurement values given by the robot sensor with respect to each landmark and data[time_step][1] is the motion co-ordinates of the robot.
+![make data] (images/make_data.png)
+
+Let's say data = make_data(*all of the above variables*), then data[time_step][0] is the measurement values given by the robot sensor with respect to each landmark and data[time_step][1] is the motion co-ordinates of the robot.
 Please see the helpers.py file for more info
 
 Here I have instantiated the robot at the center of the grid.
 
 ### 2. Omega and Xi:
 
+Please go thorugh '''2. Omega and Xi, Constraints.ipynb''' to understand the concept before you go further. It is very important.
 
+### 3. Implementation:
+
+The concept in the 2nd notebook explains the motion of the robot in 1D and gives an overview of how it can be done it 2D. Accordingly I have coded the workflow in 2D which defined in the '''slam()''' function in the 3rd notebook.
 
 ## Results
 
-Please head over to Notebook 3 of the project to see the final results and conclusion.
+![result] (images/result.png)
+
+As you can see the red circle is the robot and the purple cross marks are the landmarks. The co-orindates of the last pose of the robot are mentioned after N time steps. We can compare this value with the output robot position value of the '''data''' and can see the they are not exactly they same. The error is due to the noise that I have introduced in the robot motion and the sensor.
