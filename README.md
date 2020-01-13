@@ -25,7 +25,7 @@ First we define variables with respect to the world and the robot. The variables
 
 All of the above variables go into the `make_data()` function and out comes the true landmark locations and the robots final pose co-ordinates.
 
-![make data](images/make_data.PNG width="35%" height="35%")
+![make data](images/make_data.PNG "Title" {width="35%" height="35%"})
 
 Here data[time_step][0] is the measurement values given by the robot sensor with respect to each landmark and data[time_step][1] is the motion co-ordinates of the robot.
 Please see the helpers.py file for more info
@@ -44,6 +44,6 @@ The concept in the 2nd notebook explains the motion of the robot in 1D and gives
 
 ## Results
 
-![result](images/result.PNG width="35%" height="35%")
+![result](images/result.PNG "Title_2" {width="35%" height="35%"})
 
 As you can see the red circle is the robot and the purple cross marks are the landmarks. The co-orindates of the last pose of the robot are mentioned after N time steps. We can compare this value with the output robot position value of the `data` and can see the they are not exactly they same. The error is due to the noise that I have introduced in the robot motion and the sensor.
