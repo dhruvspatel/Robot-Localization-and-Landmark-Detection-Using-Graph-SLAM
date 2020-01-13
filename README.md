@@ -14,13 +14,13 @@ In this project, I have implemented Graph SLAM in a 2D grid world where the robo
 
 First we define variables with respect to the world and the robot. The variables that I have used are the following:
 
-- `--N`: time steps for which we want our robot to have a random walk
-- `--num_landmarks`: number of landmarks in the world
-- `--world_size`: the grid size of the world (Here I have taken it as 100 units (10x10))
-- `--measurement_range`: the range in which the robot measures a landmark
-- `--motion_noise`: noise or uncertanity present in the robot motion.
-- `--measurement_noise`: noise or uncertanity present in the robot's distance measurement sensor. These two moise variables are introduced to mimick real-life sceanrios.
-- `--distance`: distance by which a robot can move during a particular time step.
+- `N`: time steps for which we want our robot to have a random walk
+- `num_landmarks`: number of landmarks in the world
+- `world_size`: the grid size of the world (Here I have taken it as 100 units (10x10))
+- `measurement_range`: the range in which the robot measures a landmark
+- `motion_noise`: noise or uncertanity present in the robot motion.
+- `measurement_noise`: noise or uncertanity present in the robot's distance measurement sensor. These two moise variables are introduced to mimick real-life sceanrios.
+- `distance`: distance by which a robot can move during a particular time step.
 
 
 All of the above variables go into the `make_data()` function and out comes the true landmark locations and the robots final pose co-ordinates.
